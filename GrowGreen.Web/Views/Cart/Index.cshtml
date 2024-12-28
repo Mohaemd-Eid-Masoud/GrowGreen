@@ -1,0 +1,18 @@
+﻿@using GrowGreen.Application.DTOs
+@model CartDto
+
+<h1>Shopping Cart</h1>
+@* @foreach (var item in Model.Items)
+{
+    <div>
+        <p>@item.ProductName</p>
+        <p>Quantity: @item.Quantity</p>
+        <p>Price: @item.TotalPrice</p>
+        <form asp-action="RemoveFromCart" method="post">
+            <input type="hidden" name="productId" value="@item.ProductId" />
+            <button type="submit">Remove</button>
+        </form>
+    </div>
+} *@
+<p>Total Price: @Model.TotalPrice</p>
+<a asp-action="Checkout">Proceed to Checkout</a>

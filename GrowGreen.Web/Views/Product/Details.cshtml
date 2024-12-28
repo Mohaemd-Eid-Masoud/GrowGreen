@@ -1,0 +1,11 @@
+﻿@using GrowGreen.Application.DTOs
+@model ProductDto
+<h1>@Model.Name</h1>
+<p>@Model.Description</p>
+<p>Price: @Model.Price</p>
+<p>Stock: @Model.Stock</p>
+<p>Category: @Model.Category</p>
+@if (!string.IsNullOrEmpty(Model.ImagePath))
+{
+    <img src="@Model.ImagePath" alt="@Model.Name" />
+}

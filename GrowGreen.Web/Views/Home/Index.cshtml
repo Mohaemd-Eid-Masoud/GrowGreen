@@ -1,0 +1,29 @@
+﻿@using GrowGreen.Web.ViewModels
+@model IEnumerable<ProductViewModel>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Welcome to GrowGreen!</h1>
+<p>Your one-stop shop for sustainable and eco-friendly products.</p>
+
+<h2>Featured Products</h2>
+<div class="product-list">
+    @if (Model != null && Model.Any())
+    {
+        foreach (var product in Model)
+        {
+            <div class="product-item">
+                <h3>@product.Name</h3>
+                <p>@product.Description</p>
+                <p>Price: @product.Price</p>
+                <a asp-action="Details" asp-controller="Product" asp-route-id="@product.Id">View Details</a>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No featured products available at the moment.</p>
+    }
+</div>

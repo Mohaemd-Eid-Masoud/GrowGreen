@@ -1,0 +1,11 @@
+﻿@using GrowGreen.Application.DTOs
+@model OrderDto
+
+<h1>Order Details</h1>
+<p>Order Date: @Model.OrderDate</p>
+<p>Customer: @Model.User.Username</p>
+@* @foreach (var item in Model.)
+{
+    <p>@item.ProductName - @item.Quantity x @item.Price</p>
+} *@
+<p>Total Amount: @Model.TotalAmount</p>

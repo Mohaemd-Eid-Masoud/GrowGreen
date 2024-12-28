@@ -1,0 +1,10 @@
+﻿@using GrowGreen.Application.DTOs
+@model CartDto
+
+<h1>Checkout</h1>
+@* @foreach (var item in Model.Items)
+{
+    <p>@item.ProductName - @item.Quantity x @item.Price</p>
+} *@
+<p>Total Price: @Model.TotalPrice</p>
+<button>Confirm Purchase</button>

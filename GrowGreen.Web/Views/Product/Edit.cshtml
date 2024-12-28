@@ -1,0 +1,28 @@
+﻿@using GrowGreen.Application.DTOs
+@model ProductDto
+<h1>Edit Product</h1>
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <label asp-for="Description"></label>
+    <textarea asp-for="Description"></textarea>
+    <span asp-validation-for="Description"></span>
+
+    <label asp-for="Price"></label>
+    <input asp-for="Price" />
+    <span asp-validation-for="Price"></span>
+
+    <label asp-for="ImagePath"></label>
+    <input asp-for="ImagePath" type="file" />
+    <span asp-validation-for="ImagePath"></span>
+
+    <label asp-for="Category"></label>
+    <input asp-for="Category" />
+    <span asp-validation-for="Category"></span>
+
+    <button type="submit">Save</button>
+</form>

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<GrowGreen.Application.DTOs.ProductDto>
+
+
+<h1>Products</h1>
+@foreach (var product in Model)
+{
+        <div>
+            <h2>@product.Name</h2>
+            <p>@product.Description</p>
+            <p>Price: @product.Price</p>
+            <p>Stock: @product.Stock</p>
+            <a asp-action="Details" asp-route-id="@product.Id">View Details</a>
+        </div>
+}

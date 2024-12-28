@@ -1,0 +1,48 @@
+﻿@model GrowGreen.Application.DTOs.ProductDto
+
+<h1>Create Product</h1>
+<form asp-action="Create" method="post" enctype="multipart/form-data" id="createProductForm">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name" class="btn-danger"></span>
+
+    <label asp-for="Description"></label>
+    <textarea asp-for="Description"></textarea>
+    <span asp-validation-for="Description" class="btn-danger"></span>
+
+    <label asp-for="Price"></label>
+    <input asp-for="Price" />
+    <span asp-validation-for="Price" class="btn-danger"></span>
+
+    <label>Image</label>
+    <input type="file" name="image" id="imageInput" />
+    <span asp-validation-for="ImagePath" class="btn-danger"></span>
+
+    <label asp-for="Category"></label>
+    <input asp-for="Category" />
+    <span asp-validation-for="Category" class="btn-danger"></span>
+
+    <!-- Hidden field for ImagePath -->
+    <input type="hidden" name="ImagePath" id="imagePathInput" />
+
+    <button type="submit">Create</button>
+</form>
+
+<script>
+    // Listen for file selection changes
+    document.getElementById('imageInput').addEventListener('change', function (event) {
+        var file = event.target.files[0];
+
+        if (file) {
+            var fileName = file.name;
+            var extension = file.name.split('.').pop();
+            var uniqueFileName = `${fileName.split('.')[0]}_${Math.random().toString(36).substr(2, 9)}.${extension}`;
+
+            // Set the hidden input field for ImagePath
+            document.getElementById('imagePathInput').value = `/uploads/${uniqueFileName}`;
+        }
+    });
+
+    // Optionally: You can add a function to handle the form submission
+    // to ensure that everything is set correctly.
+</script>
