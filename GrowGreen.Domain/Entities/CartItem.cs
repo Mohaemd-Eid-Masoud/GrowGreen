@@ -8,7 +8,6 @@ namespace GrowGreen.Domain.Entities
         public Product Product { get; set; }
         public int Quantity { get; set; }
         public decimal TotalPrice => Quantity * Product.Price;
-        public int UserId { get; set; }  // Add this property
-
+        public int UserId { get; set; }  
     }
 }
